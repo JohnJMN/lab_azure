@@ -1,0 +1,13 @@
+Gostaria de compartilhar algumas informações sobre a criação e configuração de contas de armazenamento no ambiente Azure.
+
+Primeiro, é necessário criar uma conta de armazenamento no portal do Azure. Durante esse processo, escolhemos o nome da conta, a localização e o tipo de conta, como "Uso Geral v2". Também é essencial configurar a rede, a segurança e a criptografia.
+
+Após a criação da conta de armazenamento, precisamos configurar os contêineres, que funcionam como "buckets". Dentro da seção de blobs da conta de armazenamento, criamos um novo contêiner e definimos as configurações de acesso, como permissões de leitura e escrita.
+
+Para o upload e gerenciamento de blobs, podemos utilizar várias ferramentas, entre elas o AzCopy. AzCopy é uma ferramenta de linha de comando que permite copiar blobs ou arquivos para ou a partir de uma conta de armazenamento. Por exemplo, para carregar um arquivo local para um contêiner no Azure, usamos o seguinte comando:
+
+bash
+
+Copiar
+azcopy copy 'caminho/do/arquivo/local' 'https://<conta-de-armazenamento>.blob.core.windows.net/<nome-do-contêiner>/<nome-do-blob>?<SAS-token>'
+Por fim, também é possível configurar políticas de ciclo de vida para gerenciar automaticamente a retenção e a eliminação de blobs.
